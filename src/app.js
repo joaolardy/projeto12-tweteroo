@@ -37,7 +37,8 @@ app.get("/tweets", (req, res) => {
         const card = usuarios.find((usuario) => usuario.username === tweet.username);
         tweet.avatar = card.avatar;
       });
-    res.send(tweets);
+      let listaTweets = tweets.slice(-10);
+    res.send(listaTweets);
 })
 
 app.listen(PORT, () => {
